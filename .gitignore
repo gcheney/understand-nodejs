@@ -6,6 +6,10 @@ npm-debug.log*
 #OS Files
 .DS_Store
 
+#VS Code
+.vscode
+.idea
+
 # Runtime data
 pids
 *.pid
