@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/assets/style.css" type="text/css" rel="stylesheet" /> 
+     </head>
+    <body>
+        <h1>Person: <%= name %> Query string: <%= Qstr %></h1>
+        <form method="POST" action="/person">
+            <label for="firstname">First Name: </label><input type="text" id="firstname" name="firstname">
+            <label for="lastname">Last Name: </label><input type="text" id="lastname" name="lastname">
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

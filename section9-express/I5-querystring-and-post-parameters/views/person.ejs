@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/assets/style.css" type="text/css" rel="stylesheet" /> 
+        <script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+     </head>
+    <body>
+        <h1>Person: <%= name %> Query string: <%= Qstr %></h1>
+        <form method="POST" action="/person">
+            <label for="firstname">First Name: </label><input type="text" id="firstname" name="firstname">
+            <label for="lastname">Last Name: </label><input type="text" id="lastname" name="lastname">
+            <button type="submit">Submit</button>
+        </form>
+        <button type="submit" id="btn-json">Submit JSON</button>
+        <script>
+            $( "#btn-json" ).click(function() {
+                $.ajax({
+                    type: 'POST',
+                    url: '/personjson',
+                    data: JSON.stringify({ firstname: 'Jane', lastname: 'Doe'}),
+                    dataType: 'json',
+                    contentType: 'application/json'
+                });
+            });
+        </script>
+    </body>
+</html>
